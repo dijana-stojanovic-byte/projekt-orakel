@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KI-Escape-Room · Projekt ORAKEL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== START / INTRO ===================== -->
+  <div id="intro" class="overlay">
+    <div class="intro-box">
+      <div class="intro-logo">⚙️🧠</div>
+      <h1>PROJEKT&nbsp;ORAKEL</h1>
+      <p class="subtitle">Ein KI-Escape-Room</p>
+      <div class="intro-text">
+        <p><strong>Es ist 23:14 Uhr im KI-Forschungslabor eurer Schule.</strong></p>
+        <p>Ihr seid das Notfall-Team „KI-Ethik“. Das selbstlernende Schulsystem
+        <strong>ORAKEL</strong> sollte morgen alle Klassen bewerten – doch im letzten
+        Training hat es einen <em>Bias</em> entwickelt und sich verselbstständigt.
+        Es hat die Labortüren verriegelt.</p>
+        <p>ORAKEL gibt euch nur frei, wenn ihr beweist, dass <strong>Menschen</strong>
+        verstehen, wie es funktioniert. Arbeitet zusammen, durchsucht die vier Labore,
+        löst die Rätsel und gelangt in den Kontrollraum, um ORAKEL abzuschalten.</p>
+        <p class="warn">⏱ Geschätzte Zeit: 90 Minuten &nbsp;·&nbsp; 👥 Gruppen von 3–5 Personen</p>
+      </div>
+      <button class="btn-big" id="startBtn">▶ Mission starten</button>
+      <button class="btn-link" id="continueBtn" style="display:none;">Gespeicherten Spielstand fortsetzen</button>
+    </div>
+  </div>
+
+  <!-- ===================== HAUPTSPIEL ===================== -->
+  <div id="game" class="hidden">
+
+    <header id="topbar">
+      <div class="brand">⚙️🧠 ORAKEL</div>
+
+      <nav id="map" aria-label="Raumnavigation"></nav>
+
+      <div class="status">
+        <div class="progress-wrap" title="Gelöste Rätsel">
+          <div class="progress-label"><span id="progressText">0/15</span> Rätsel</div>
+          <div class="progress-bar"><div id="progressFill"></div></div>
+        </div>
+        <div class="timer" id="timer">00:00</div>
+        <button class="btn-icon" id="hintBtn" title="Tipp zum aktuellen Raum">💡 Tipp</button>
+        <button class="btn-icon" id="helpBtn" title="Spielhilfe">❓ Hilfe</button>
+      </div>
+    </header>
+
+    <main id="stage">
+      <div id="roomTitle"></div>
+      <div id="room"></div>
+      <div id="selectedHint" class="selected-hint hidden"></div>
+    </main>
+
+    <footer id="inventoryBar">
+      <span class="inv-label">🎒 Inventar:</span>
+      <div id="inventory"></div>
+    </footer>
+  </div>
+
+  <!-- ===================== MODAL ===================== -->
+  <div id="modalOverlay" class="overlay hidden">
+    <div id="modal">
+      <button id="modalClose" class="modal-close" aria-label="Schließen">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ===================== TOAST ===================== -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
